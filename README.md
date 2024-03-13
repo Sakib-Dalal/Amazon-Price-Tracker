@@ -1,6 +1,18 @@
 # Amazon Price Tracker
 
-This is a simple Python script to track the price of a specific product on Amazon and send an email notification if the price drops below a target value.
+## Introduction
+
+Amazon Price Tracker is a Python script that helps you monitor the price of a specific product on Amazon and sends you an email notification if the price drops below your specified target.
+
+## Prerequisites
+
+Before using the Amazon Price Tracker, make sure you have the following:
+
+- Python installed on your machine
+- Necessary Python packages installed (you can install them using `pip install -r requirements.txt`)
+- An Amazon product URL that you want to track
+- An email address to receive notifications
+- An app password for the email account used in the script
 
 ## Installation
 
@@ -10,37 +22,43 @@ This is a simple Python script to track the price of a specific product on Amazo
     git clone git@github.com:Sakib-Dalal/Amazon-Price-Tracker.git
     ```
 
-2. Install the required dependencies:
+2. Navigate to the project directory:
+
+    ```bash
+    cd Amazon-Price-Tracker
+    ```
+
+3. Install the required dependencies:
 
     ```bash
     pip install -r requirements.txt
     ```
 
+4. Open `main.py` in a text editor and update the following variables:
+
+    - `EMAIL`: Your email address
+    - `PASSWORD`: Your app password for the email account
+    - `PRODUCT_URL`: The URL of the Amazon product you want to track
+    - `TARGET_PRICE`: Your desired target price for the product
+
 ## Usage
 
-1. Open the `main.py` file and update the following variables:
+Run the script using the following command:
 
-   ```python
-   EMAIL = "your-email@gmail.com"
-   PASSWORD = "your-app-password"
-   PRODUCT_URL = "https://www.amazon.in/gp/product/B0CN1PCYPC/ref=sw_img_1?smid=A11SUS3X5513OU&psc=1"
-   TARGET_PRICE = 500.0
-   ```
+```bash
+python main.py
+```
 
-   Replace the values with your Gmail email, [App Password](https://myaccount.google.com/apppasswords), Amazon product URL, and your desired target price.
+The script will check the price of the specified product on Amazon every day at 09:00 AM. If the current price is below your target price, you will receive an email notification with a link to the product.
 
-2. Run the script:
+## Contributing
 
-    ```bash
-    python main.py
-    ```
+If you find any issues or have suggestions for improvement, feel free to open an issue or create a pull request on the [GitHub repository](https://github.com/Sakib-Dalal/Amazon-Price-Tracker).
 
-   The script will check the price every day at 09:00 AM. If the current price is below the target price, it will send an email notification.
+## Disclaimer
 
-## Important Note
+This script is provided as-is and may require adjustments based on changes to the Amazon website structure. Use it responsibly and at your own risk.
 
-- Make sure to enable "Less secure app access" in your Gmail account settings.
-- Use an [App Password](https://myaccount.google.com/apppasswords) for secure authentication.
-- Please be aware of Amazon's terms of service when scraping data.
+## License
 
-Feel free to contribute or customize the code based on your needs. Happy tracking!
+This project is licensed under the [MIT License](LICENSE).
